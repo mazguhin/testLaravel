@@ -18,3 +18,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+// добавление города
+Route::get ('/city/add','CityController@add');
+Route::post ('/city/add','CityController@store');
+
+// просмотр всех городов
+Route::get ('/city', 'CityController@index');
+// просмотр конкретного города
+Route::get ('/city/{id}', 'CityController@show');
+
+// редактирование города
+Route::get ('/city/edit/{id}','CityController@edit');
+Route::post ('/city/edit/{id}','CityController@save');
+
+// удалениие города
+Route::get ('/city/delete/{id}','CityController@delete');
